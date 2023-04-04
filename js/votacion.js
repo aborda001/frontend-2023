@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const usSelect = document.getElementById("usSelect");
   const idInput = document.getElementById("idInput");
 
-  fetch("http://localhost:3000/api/ciudades", {
+  fetch("http://backend.padronmisiones.com/api/ciudades", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const fillSelectLocalesFunc = (ciudad_id) => {
-    fetch("http://localhost:3000/api/ciudades/locales/" + ciudad_id, {
+    fetch("http://backend.padronmisiones.com/api/ciudades/locales/" + ciudad_id, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const data = Object.fromEntries(formData);
     data.code = data.code.toUpperCase();
 
-    const url = new URL("http://localhost:3000/api/votantes/mesaorden");
+    const url = new URL("http://backend.padronmisiones.com/api/votantes/mesaorden");
     url.search = new URLSearchParams(data);
     fetch(url.href, {
       method: "GET",
@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
     data.voto = data.voto === "1" ? true : false;
     data.us = data.us === "1" ? true : false;
 
-    fetch("http://localhost:3000/api/votantes/" + idInput.value, {
+    fetch("http://backend.padronmisiones.com/api/votantes/" + idInput.value, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

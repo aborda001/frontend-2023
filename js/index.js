@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const fillChart = () => {
-    fetch("http://localhost:3000/api/votantes/general/", {
+    fetch("http://backend.padronmisiones.com/api/votantes/general/", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
   fillChart();
 
   const fillTableCiudades = () => {
-    fetch("http://localhost:3000/api/votantes/general/departamento", {
+    fetch("http://backend.padronmisiones.com/api/votantes/general/departamento", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

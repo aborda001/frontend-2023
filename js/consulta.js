@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  fetch("http://localhost:3000/api/ciudades", {
+  fetch("http://backend.padronmisiones.com/api/ciudades", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
       delete data.ciudad_id;
     }
 
-    const url = new URL("http://localhost:3000/api/votantes");
+    const url = new URL("http://backend.padronmisiones.com/api/votantes");
     url.search = new URLSearchParams(data);
     fetch(url.href, {
       method: "GET",
@@ -77,13 +77,13 @@ document.addEventListener("DOMContentLoaded", () => {
         <td data-label="Cedula">${item.document}</td>
         <td data-label="Afiliaciones">${item.affiliations}</td>
         <td data-label="Mesa">${item.mesa}</td>
-        <td data-label="Orden">${item.order}</td>
+        <td data-label="Orden">${item.orden}</td>
         <td data-label="Voto">${item.voto ? "Si" : "No"}</td>
         `;
 
       tr.onclick = () => {
         const id = tr.getAttribute("data-id");
-        fetch(`http://localhost:3000/api/votantes/${id}`, {
+        fetch(`http://backend.padronmisiones.com/api/votantes/${id}`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
             </tr>
             <tr>
               <td>Orden</td>
-              <td>${data.order}</td>
+              <td>${data.orden}</td>
             </tr>
             <tr>
               <td>Afiliaciones</td>

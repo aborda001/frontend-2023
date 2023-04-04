@@ -2,7 +2,7 @@ const infoData = JSON.parse(localStorage.getItem("infoData"));
 if (!infoData.id) {
   window.location.replace("/login.html");
 } else {
-  fetch("http://localhost:3000/api/login", {
+  fetch("http://backend.padronmisiones.com/api/login", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",

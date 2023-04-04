@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
     const formData = new FormData(form);
     const data = Object.fromEntries(formData);
-    fetch("http://localhost:3000/api/login", {
+    fetch("http://backend.padronmisiones.com/api/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
