@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Derlis Maidana Senador</title>
+  </head>
+
+  <body>
+    <div class="display-flex">
+      <div class="center-total">
+        <img src="./img/fondo.png" class="img-background" />
+      </div>
+    </div>
+    <div class="container-red">
+      <div class="flex">
+        <img src="./img/cabeceraDerlis.png" class="img-header" />
+        <h1 class="text-title hidden">Iniciar sesión</h1>
+        <img src="./img/fondoDerlis.png" class="img-header" />
+      </div>
+      <div class="display-flex">
+        <h1 class="text-title title-hidden">Iniciar sesión</h1>
+      </div>
+    </div>
+    <div class="display-flex">
+      <div class="form-container">
+        <form action="/index.html" class="form" method="post" id="form">
+          <div class="display-flex">
+            <div class="danger flex" id="errorCard">
+              <p>Credenciales invalidas</p>
+            </div>
+          </div>
+          <div class="display-flex">
+            <input
+              type="text"
+              class="input"
+              placeholder="Usuario"
+              required
+              autofocus
+              autocomplete="off"
+              name="username"
+            />
+          </div>
+          <div class="display-flex">
+            <input
+              type="password"
+              class="input"
+              placeholder="Contraseña"
+              required
+              autocomplete="off"
+              name="password"
+            />
+          </div>
+          <div class="display-flex block">
+            <input type="submit" class="input" value="Iniciar Sesión" />
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="./js/login.js"></script>
+  </body>
+</html>
