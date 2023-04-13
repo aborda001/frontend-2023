@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const fillChart = () => {
-    fetch("http://backend.padronmisiones.com/api/votantes/general/", {
+    fetch(`${API_HOST}/votantes/general/`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
   fillChart();
 
   const fillTableCiudades = () => {
-    fetch("http://backend.padronmisiones.com/api/votantes/general/departamento", {
+    fetch(`${API_HOST}/votantes/general/departamento`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -110,14 +110,15 @@ document.addEventListener("DOMContentLoaded", () => {
         <td data-label="Departamento">Misiones</td>
         <td data-label="Efectividad" class="is-progress-cell">
           <progress
-            max="${item.votantes}"
+            max="100"
             class="progress is-small is-primary"
-            value="${item.votantes_us}"
+            value="${item.efectividad}"
           >
-            ${item.votantes_us}
+            ${item.efectividad}
           </progress>
         </td>
         <td>${item.efectividad} %</td>
+        <td>${item.votantes}</td>
       </tr>
       `;
 

@@ -1,8 +1,10 @@
 const infoData = JSON.parse(localStorage.getItem("infoData"));
+// var API_HOST = "http://localhost:3000/api";
+var API_HOST = "http://backend.padronmisiones.com/api";
 if (!infoData.id) {
   window.location.replace("/login.html");
 } else {
-  fetch("http://backend.padronmisiones.com/api/login", {
+  fetch(`${API_HOST}/login`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",

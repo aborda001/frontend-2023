@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault();
     const formData = new FormData(formUsuario);
     const data = Object.fromEntries(formData);
-    fetch("http://backend.padronmisiones.com/api/usuarios", {
+    fetch(`${API_HOST}/usuarios`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const fillTable = () => {
     tableUsuarios.innerHTML = "";
-    fetch("http://backend.padronmisiones.com/api/usuarios", {
+    fetch(`${API_HOST}/usuarios`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  fetch("http://backend.padronmisiones.com/api/ciudades", {
+  fetch(`${API_HOST}/ciudades`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
       delete data.ciudad_id;
     }
 
-    const url = new URL("http://backend.padronmisiones.com/api/votantes");
+    const url = new URL(`${API_HOST}/votantes`);
     url.search = new URLSearchParams(data);
     fetch(url.href, {
       method: "GET",
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       tr.onclick = () => {
         const id = tr.getAttribute("data-id");
-        fetch(`http://backend.padronmisiones.com/api/votantes/${id}`, {
+        fetch(`${API_HOST}/votantes/${id}`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
