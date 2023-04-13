@@ -117,8 +117,8 @@ document.addEventListener("DOMContentLoaded", () => {
             ${item.efectividad}
           </progress>
         </td>
-        <td>${item.efectividad} %</td>
-        <td>${item.votantes}</td>
+        <td data-label="Efectividad">${item.efectividad} %</td>
+        <td data-label="Votantes">${item.votantes}</td>
       </tr>
       `;
 
