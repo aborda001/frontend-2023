@@ -43,7 +43,11 @@ document.addEventListener("DOMContentLoaded", () => {
             html += `<td>${votantes.orden}</td>`;
           }
         } else {
-          break;
+          if (data.votantes.length < count) {
+            break;
+          } else {
+            html += `<td>${count}</td>`;
+          }
         }
       }
       tr.innerHTML = html;
@@ -67,7 +71,11 @@ document.addEventListener("DOMContentLoaded", () => {
               html += `<td>${votantes.orden}</td>`;
             }
           } else {
-            break;
+            if (data.votantes.length < count) {
+              break;
+            } else {
+              html += `<td>${count}</td>`;
+            }
           }
         }
         tr.innerHTML = html;
