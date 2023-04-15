@@ -4,6 +4,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const efectividad = document.getElementById("efectividad");
   const tablaBody = document.getElementById("tablaBody");
   const reloadCiudades = document.getElementById("reloadCiudades");
+  const printButton = document.querySelectorAll("#printButton");
+
+  printButton.forEach((button) => {
+    button.addEventListener("click", (e) => {
+      console.log("print");
+      e.preventDefault();
+      window.print();
+    });
+  });
 
   document.addEventListener("keydown", (e) => {
     if (e.ctrlKey && e.key === "p") {
@@ -23,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .then((res) => res.json())
       .then((data) => {
         votantes.innerHTML = data.votantes;
-        mesas.innerHTML = data.mesas;
+        mesas.innerHTML = data.votantes_us;
         efectividad.innerHTML = data.efectividad + "%";
         createChart(data);
       });

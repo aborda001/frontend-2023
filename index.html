@@ -25,6 +25,9 @@
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
       }
+      .oculto-impresion {
+        display: none !important;
+      }
     </style>
   </head>
 
@@ -32,7 +35,7 @@
     <div id="app">
       <!-- Nav bEgIn -->
 
-      <nav id="navbar-main" class="navbar is-fixed-top">
+      <nav id="navbar-main" class="navbar is-fixed-top oculto-impresion">
         <div class="navbar-brand" id="navRemove">
           <a class="navbar-item is-hidden-desktop jb-aside-mobile-toggle">
             <span class="icon"
@@ -151,7 +154,7 @@
           </div>
         </div>
       </section>
-      <section class="hero is-hero-bar">
+      <section class="hero is-hero-bar oculto-impresion">
         <div class="hero-body">
           <div class="level">
             <div class="level-left">
@@ -173,7 +176,7 @@
                 <div class="level is-mobile">
                   <div class="level-item">
                     <div class="is-widget-label">
-                      <h3 class="subtitle is-spaced">Votantes</h3>
+                      <h3 class="subtitle is-spaced">Votantes total</h3>
                       <h1 class="title" id="votantes">...</h1>
                     </div>
                   </div>
@@ -194,14 +197,14 @@
                 <div class="level is-mobile">
                   <div class="level-item">
                     <div class="is-widget-label">
-                      <h3 class="subtitle is-spaced">Mesas</h3>
+                      <h3 class="subtitle is-spaced">Votantes nuestros</h3>
                       <h1 class="title" id="mesas">...</h1>
                     </div>
                   </div>
                   <div class="level-item has-widget-icon">
                     <div class="is-widget-icon">
                       <span class="icon has-text-danger is-large"
-                        ><i class="mdi mdi-desk mdi-48px"></i
+                        ><i class="mdi mdi-account-multiple mdi-48px"></i
                       ></span>
                     </div>
                   </div>
@@ -237,8 +240,8 @@
               <span class="icon"><i class="mdi mdi-finance"></i></span>
               Gráfico
             </p>
-            <a href="/index.html" class="card-header-icon">
-              <span class="icon"><i class="mdi mdi-reload"></i></span>
+            <a class="card-header-icon oculto-impresion" id="printButton">
+              <span class="icon"><i class="mdi mdi-file-document-outline"></i></span>
             </a>
           </header>
           <div class="card-content">
@@ -269,7 +272,7 @@
               <span class="icon"><i class="mdi mdi-map"></i></span>
               Ciudades
             </p>
-            <a href="#" class="card-header-icon" id="reloadCiudades">
+            <a href="#" class="card-header-icon oculto-impresion" id="reloadCiudades">
               <span class="icon"><i class="mdi mdi-reload"></i></span>
             </a>
           </header>
