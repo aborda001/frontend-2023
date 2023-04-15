@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   const table = document.getElementById("table");
-  const mesa = document.getElementById("mesa");
+  const mesa = document.querySelectorAll("#mesa");
+  const tableSection = document.getElementById("tableSec");
+  const tableSecContainer = document.getElementById("tableSecContainer");
 
   let count = 0;
 
@@ -20,7 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
   })
     .then((res) => res.json())
     .then((data) => {
-      mesa.innerHTML = `Mesa: ${mesaNumber} -------- Local: ${data.local}`;
+      const mesaHtml = `Mesa: ${mesaNumber} -------- Local: ${data.local}`;
+      mesa.forEach((mesa) => (mesa.innerHTML = mesaHtml));
       fillTable(data);
     });
 
@@ -34,19 +37,43 @@ document.addEventListener("DOMContentLoaded", () => {
           (votante) => votante.orden == `${count}`
         );
         if (votantes) {
-            if (votantes.voto) {
-                html += `<td style="background-color: #de5349;">${votantes.orden}</td>`;
-            } else {
-                html += `<td>${votantes.orden}</td>`;
-            }
+          if (votantes.voto) {
+            html += `<td style="background-color: #de5349;">${votantes.orden}</td>`;
+          } else {
+            html += `<td>${votantes.orden}</td>`;
+          }
         } else {
-          html += `<td>${count}</td>`;
+          break;
         }
       }
       tr.innerHTML = html;
       table.appendChild(tr);
     }
+
+    if (data.votantes.length > 400) {
+      tableSecContainer.classList.remove("oculto");
+      for (let index = 1; index <= 16; index++) {
+        const tr = document.createElement("tr");
+        let html = "";
+        for (let column = 1; column <= 25; column++) {
+          count++;
+          const votantes = data.votantes.find(
+            (votante) => votante.orden == `${count}`
+          );
+          if (votantes) {
+            if (votantes.voto) {
+              html += `<td style="background-color: #de5349;">${votantes.orden}</td>`;
+            } else {
+              html += `<td>${votantes.orden}</td>`;
+            }
+          } else {
+            break;
+          }
+        }
+        tr.innerHTML = html;
+        tableSection.appendChild(tr);
+      }
+    }
     window.print();
   };
-
 });

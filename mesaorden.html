@@ -24,10 +24,9 @@
       .table td {
         border: 3px solid #000;
       }
-      /* html.has-navbar-fixed-top,
-      body.has-navbar-fixed-top {
-        padding-top: 0;
-      } */
+      .oculto {
+        display: none;
+      }
     </style>
     <style type="text/css" media="print">
       * {
@@ -37,12 +36,16 @@
       @page {
         size: letter landscape;
       }
+
+      .oculto-impresion {
+        display: none !important;
+      }
     </style>
   </head>
 
   <body style="padding-left: 0 !important">
     <div id="app">
-      <nav id="navbar-main" class="navbar is-fixed-top">
+      <nav id="navbar-main" class="navbar is-fixed-top oculto-impresion">
         <div class="navbar-brand">
           <a href="votacion.html" class="navbar-item">
             Volver &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -74,15 +77,15 @@
         <div class="container">
           <span class="is-size-5" id="mesa"></span>
           <br />
-
           <table class="table is-bordered" id="table"></table>
         </div>
-      </section>
-      <footer class="footer">
-        <div class="container-fluid">
-          <div class="level-item">Sistema Informático - 2023 ©</div>
+        <div class="container oculto" id="tableSecContainer">
+          <br /><br /><br /><br /><br />
+          <span class="is-size-5" id="mesa"></span>
+          <br />
+          <table class="table is-bordered" id="tableSec"></table>
         </div>
-      </footer>
+      </section>
     </div>
 
     <!-- Scripts below are for demo only -->
