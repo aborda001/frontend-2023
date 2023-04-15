@@ -9,6 +9,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const usSelect = document.getElementById("usSelect");
   const idInput = document.getElementById("idInput");
 
+  const reporteMesa = document.getElementById("reporteMesa");
+
+  reporteMesa.onclick = (e) => {
+    e.preventDefault();
+    const formData = new FormData(formConsulta);
+    const data = Object.fromEntries(formData);
+    if (!data.code || isNaN(data.code)) {
+      return alert("Ingrese solo el número de mesa");
+    }
+    window.location.href = (`/mesaorden.html?mesa=${data.code}&local=${data.local_id}&ciudad=${data.ciudad_id}`);
+  };
+
   fetch(`${API_HOST}/ciudades`, {
     method: "GET",
     headers: {

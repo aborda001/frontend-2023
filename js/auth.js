@@ -21,7 +21,9 @@ if (!infoData.id) {
 
 document.addEventListener("DOMContentLoaded", () => {
   const usernameText = document.getElementById("usernameText");
-  usernameText.innerHTML = infoData.username;
+  if (usernameText) {
+    usernameText.innerHTML = infoData.username;
+  }
 
   if (infoData.role != "administrador") {
     const admin = document.querySelectorAll("#admin");

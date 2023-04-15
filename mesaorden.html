@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  class="has-aside-left has-aside-mobile-transition has-navbar-fixed-top has-aside-expanded"
+>
+  <head>
+    <script src="js/auth.js"></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Derlis Maidana Senador</title>
+
+    <!-- Bulma is included -->
+    <link rel="stylesheet" href="css/main.min.css" />
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <style>
+      .table td {
+        border: 3px solid #000;
+      }
+      /* html.has-navbar-fixed-top,
+      body.has-navbar-fixed-top {
+        padding-top: 0;
+      } */
+    </style>
+    <style type="text/css" media="print">
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      @page {
+        size: landscape;
+      }
+    </style>
+  </head>
+
+  <body style="padding-left: 0 !important">
+    <div id="app">
+      <nav id="navbar-main" class="navbar is-fixed-top">
+        <div class="navbar-brand">
+          <a href="votacion.html" class="navbar-item">
+            Volver &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="icon"
+              ><i class="mdi mdi-backburger mdi-24px"></i
+            ></span>
+          </a>
+        </div>
+      </nav>
+      <section class="section is-title-bar">
+        <div class="level">
+          <div class="level-left">
+            <div class="level-item">
+              <figure class="image is-128x128" style="height: auto">
+                <img src="./img/cabeceraDerlis.png" />
+              </figure>
+            </div>
+          </div>
+          <div class="level-right">
+            <div class="level-item">
+              <figure class="image is-128x128" style="height: auto">
+                <img src="./img/fondoDerlis.png" />
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container">
+          <span class="is-size-5" id="mesa"></span>
+          <br />
+
+          <table class="table is-bordered" id="table"></table>
+        </div>
+      </section>
+      <footer class="footer">
+        <div class="container-fluid">
+          <div class="level-item">Sistema Informático - 2023 ©</div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Scripts below are for demo only -->
+    <script type="text/javascript" src="js/main.min.js"></script>
+    <script type="text/javascript" src="js/mesaorden.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"
+    ></script>
+
+    <!-- Icons below are for demo only. Feel free to use any icon pack. Docs: https://bulma.io/documentation/elements/icon/ -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.materialdesignicons.com/4.9.95/css/materialdesignicons.min.css"
+    />
+  </body>
+</html>
